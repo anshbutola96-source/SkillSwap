@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>SkillSwap User Manual &amp; Handover</title>
+  <style>
+    @page { size: A4; margin: 16mm 16mm 18mm; }
+    * { box-sizing: border-box; }
+    body {
+      font-family: "Segoe UI", Calibri, Arial, sans-serif;
+      color: #0f172a;
+      font-size: 11pt;
+      line-height: 1.45;
+      margin: 0;
+    }
+    h1 { font-size: 22pt; letter-spacing: -0.03em; margin: 0 0 6px; color: #0f766e; }
+    h2 {
+      font-size: 13.5pt;
+      color: #115e59;
+      border-bottom: 2px solid #0f766e;
+      padding-bottom: 4px;
+      margin: 22px 0 10px;
+      page-break-after: avoid;
+    }
+    h3 { font-size: 11.5pt; margin: 14px 0 6px; color: #134e4a; page-break-after: avoid; }
+    p, li { margin: 0 0 8px; }
+    ul, ol { margin: 0 0 10px; padding-left: 20px; }
+    a { color: #0f766e; }
+    .cover {
+      background: #0f766e;
+      color: #fff;
+      padding: 22px 24px;
+      border-radius: 10px;
+      margin-bottom: 18px;
+    }
+    .cover h1 { color: #fff; }
+    .cover p { margin: 4px 0; font-size: 11pt; }
+    .muted { color: #475569; }
+    .pill {
+      display: inline-block;
+      background: #ccfbf1;
+      color: #115e59;
+      font-weight: 700;
+      font-size: 9.5pt;
+      padding: 2px 8px;
+      border-radius: 999px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 8px 0 14px;
+      font-size: 10.5pt;
+      page-break-inside: avoid;
+    }
+    th, td {
+      border: 1px solid #cbd5e1;
+      padding: 6px 8px;
+      text-align: left;
+      vertical-align: top;
+    }
+    th { background: #0f766e; color: #fff; font-weight: 600; }
+    tr:nth-child(even) td { background: #f8fafc; }
+    code, pre {
+      font-family: Consolas, "Courier New", monospace;
+      font-size: 9.5pt;
+    }
+    code { background: #f1f5f9; padding: 1px 4px; border-radius: 3px; }
+    pre {
+      background: #0f172a;
+      color: #e2e8f0;
+      padding: 12px 14px;
+      border-radius: 8px;
+      white-space: pre-wrap;
+      page-break-inside: avoid;
+    }
+    .note {
+      background: #ecfdf5;
+      border-left: 4px solid #0f766e;
+      padding: 8px 12px;
+      margin: 10px 0 14px;
+    }
+    .footer-note { font-size: 9.5pt; color: #64748b; margin-top: 18px; }
+  </style>
+</head>
+<body>
+  <div class="cover">
+    <div class="pill" style="background:#fff;color:#0f766e;margin-bottom:10px">VIPS · Pitampura · B.Tech 1st sem</div>
+    <h1>SkillSwap</h1>
+    <p>User Manual &amp; Handover</p>
+    <p>Campus knowledge network — leftover items (free) + 25-minute Google Meet sessions (free) + student/teacher feed.</p>
+    <p><strong>Live site:</strong> https://skillswap-3ca53.web.app</p>
+  </div>
+
+  <p class="muted">This document is for handover: how to use the site, how it was built, where data is saved, and how the logic works.</p>
+
+  <h2>1. Login (ready accounts)</h2>
+  <table>
+    <thead>
+      <tr><th>Role</th><th>Email</th><th>Password</th><th>What it is for</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Student</td><td><code>ansh@vips.edu</code></td><td><code>campus123</code></td><td>Normal campus user</td></tr>
+      <tr><td>Admin</td><td><code>admin@vips.edu</code></td><td><code>campus123</code></td><td>Moderate posts, items, sessions</td></tr>
+      <tr><td>Teacher</td><td>create your own</td><td>min 6 characters</td><td>Faculty posts and Meet hours</td></tr>
+    </tbody>
+  </table>
+  <p>Open <a href="https://skillswap-3ca53.web.app">https://skillswap-3ca53.web.app</a> → <strong>Log in</strong>.</p>
+  <p><strong>New account:</strong> <strong>Create account</strong> → name, email, password twice → Student or Teacher → programme → <strong>Create account</strong>. Admin is not in the dropdown. Only <code>admin@vips.edu</code> becomes Admin.</p>
+  <p>Password must be at least 6 characters. Same email works on any browser (data is online).</p>
+
+  <h2>2. How to use (every role)</h2>
+  <p>After login, the top bar is: <strong>Feed · Items · Knowledge · People · About · Inbox · (your name) · Post · Log out</strong>. Admin also sees <strong>Moderate</strong>.</p>
+  <div class="note">There are <strong>no public comments</strong>. To ask someone, open their profile and send an Inbox message.</div>
+
+  <h3>2.1 Student (<code>ansh@vips.edu</code>)</h3>
+  <ol>
+    <li><strong>Feed</strong> — campus posts. Type in the box, pick Share knowledge / Need something / Campus update, click <strong>Post</strong>. Mark <strong>Helpful</strong>. Filters: All, Following, Faculty, Knowledge, Needs, Updates.</li>
+    <li><strong>Items</strong> — leftover books, drafter, notes. Open a card → <strong>Request free item</strong>. Owner gets it in Inbox. No payment.</li>
+    <li><strong>Knowledge</strong> — 25-min Google Meet sessions. Open one → <strong>Join Meet</strong>.</li>
+    <li><strong>People</strong> — follow classmates and teachers. Profile → Follow or private message.</li>
+    <li><strong>Post</strong> (green) — list a leftover item (upload your photo) or host a free Meet (paste a Meet link).</li>
+    <li><strong>Inbox</strong> — item requests, session joins, private messages.</li>
+    <li><strong>Your name</strong> — your profile, listings, sessions you joined. You can delete your own posts/listings.</li>
+  </ol>
+  <p>Demo path: Items → request mini-drafter. Knowledge → join GitHub session. Feed → post a need.</p>
+
+  <h3>2.2 Teacher (create account, role = Teacher)</h3>
+  <p>Same screens as student, used for class:</p>
+  <ul>
+    <li>Feed: lab format, extra class, notice.</li>
+    <li><strong>Post</strong> → knowledge session: title, what you will cover, time, <strong>Google Meet link</strong>.</li>
+    <li>Students follow you. <strong>Faculty</strong> filter on the feed shows only teacher posts.</li>
+    <li>Replies come in <strong>Inbox</strong>, not as public comments.</li>
+    <li>You can delete your own posts/listings. You cannot remove other people’s content (that is Admin).</li>
+  </ul>
+
+  <h3>2.3 Admin (<code>admin@vips.edu</code>)</h3>
+  <p>Same as a logged-in user, plus <strong>Moderate</strong>:</p>
+  <ol>
+    <li>Open <strong>Moderate</strong>.</li>
+    <li>Three lists: Feed posts, Items, Meet sessions.</li>
+    <li><strong>Remove</strong> → confirm. That listing disappears for everyone.</li>
+    <li>On the feed, <strong>Remove</strong> is also on every post. On an item/session page: Remove listing / Remove session.</li>
+  </ol>
+  <p>Use this for spam or a Meet that should not stay public.</p>
+
+  <h2>3. How the website was built</h2>
+  <table>
+    <thead><tr><th>Layer</th><th>What we used</th></tr></thead>
+    <tbody>
+      <tr><td>UI</td><td>React 19 (JavaScript, not TypeScript)</td></tr>
+      <tr><td>Build / local server</td><td>Vite 8</td></tr>
+      <tr><td>Pages</td><td>React Router DOM 7</td></tr>
+      <tr><td>Icons</td><td>Lucide</td></tr>
+      <tr><td>Login + database</td><td>Google Firebase (Spark / free)</td></tr>
+      <tr><td>Hosting</td><td>Firebase Hosting</td></tr>
+    </tbody>
+  </table>
+  <p><strong>Important folders</strong></p>
+  <pre>d:\ProjectAnsh
+├── src\
+│   ├── App.jsx          ← login gate + top nav + routes
+│   ├── context.jsx      ← all business logic (signup, post, like, follow, delete)
+│   ├── data.js          ← seed people, posts, items, sessions, admin email
+│   ├── index.css        ← UI
+│   ├── pages\           ← Feed, Items, Knowledge, People, Inbox, Post, Profile, Admin, About
+│   ├── components\      ← cards (item, session, feed post)
+│   └── lib\
+│       ├── firebase.js  ← connects to Firebase using .env keys
+│       ├── cloud.js     ← read/write Firestore
+│       └── localAuth.js ← backup login if .env is missing (this computer only)
+├── public\              ← VIPS logo + campus photos
+├── firestore.rules      ← who can read/write the database
+├── firebase.json        ← hosting + rules
+├── .env                 ← Firebase web keys (not committed to Git)
+└── dist\                ← production build uploaded to Hosting</pre>
+  <p>Local run:</p>
+  <pre>npm install
+npm run dev</pre>
+  <p>Open the URL Vite prints (often http://localhost:5173 or 5175).</p>
+  <p>Live deploy (already done): <code>npm run build</code> then <code>npx firebase-tools deploy --only hosting</code>. Firebase project id: <code>skillswap-3ca53</code>.</p>
+
+  <h2>4. Where data is saved (logic)</h2>
+  <p>Two Google services, one job each:</p>
+  <table>
+    <thead><tr><th>What</th><th>Where it is stored</th><th>Why</th></tr></thead>
+    <tbody>
+      <tr><td>Email + password</td><td><strong>Firebase Authentication</strong></td><td>Passwords are hashed by Google. They never go into our campus database.</td></tr>
+      <tr><td>Profile, posts, items, sessions, inbox, follow list</td><td><strong>Cloud Firestore</strong></td><td>Documents the website reads and writes.</td></tr>
+      <tr><td>Website files (HTML/CSS/JS, logo, photos)</td><td><strong>Firebase Hosting</strong></td><td>The live URL.</td></tr>
+    </tbody>
+  </table>
+  <p><strong>Firestore collections</strong> (online database tables):</p>
+  <table>
+    <thead><tr><th>Collection</th><th>What is inside</th></tr></thead>
+    <tbody>
+      <tr><td><code>users</code></td><td>Name, email, role (Student / Teacher / Admin), branch, bio, following</td></tr>
+      <tr><td><code>posts</code></td><td>Feed text, type, author, likes</td></tr>
+      <tr><td><code>resources</code></td><td>Leftover items, photo, status (Available / Requested)</td></tr>
+      <tr><td><code>skills</code></td><td>Meet sessions, Meet link, slots</td></tr>
+      <tr><td><code>inbox</code></td><td>Private messages, item requests, session joins</td></tr>
+      <tr><td><code>bookings</code></td><td>Who joined which session</td></tr>
+      <tr><td><code>meta/seed</code></td><td>Marker so sample campus data is loaded only once</td></tr>
+    </tbody>
+  </table>
+  <p><strong>Security rule:</strong> signed-in users can read/write. Guests see only the login page. File: <code>firestore.rules</code> → <code>allow read, write: if request.auth != null</code>.</p>
+  <p><strong>Admin rule in code (not a Google role):</strong> if email is <code>admin@vips.edu</code>, role becomes Admin (<code>src/data.js</code>). Signup dropdown cannot pick Admin.</p>
+  <p><strong>Photos of leftover items:</strong> the user uploads a file; the browser resizes it and stores it as an image string on the item document in Firestore. Not a separate Storage bucket.</p>
+  <p><strong>If <code>.env</code> is missing</strong> (local demo only): accounts go to browser localStorage (<code>skillswap-accounts-v1</code>, hashed password). The live site always uses Firebase.</p>
+  <p>Footer <strong>Accounts online · Firebase</strong> means the cloud path is on.</p>
+
+  <h2>5. How it works (step by step)</h2>
+  <pre>Browser (React)
+    │
+    ├─ Login / Signup ──► Firebase Authentication  (email + password)
+    │
+    └─ After login ────► Cloud Firestore listeners (live updates)
+                              users, posts, resources, skills, inbox, bookings</pre>
+  <ol>
+    <li><strong>Open site</strong> — App.jsx waits until Firebase says who is logged in. No user → login/signup screen. User → campus layout.</li>
+    <li><strong>Signup</strong> — Firebase creates the auth user. Then a users/{uid} document is written (name, role, branch). Password stays in Authentication only.</li>
+    <li><strong>Login</strong> — Firebase checks email/password. On success, onAuthStateChanged sets the session. listenCampus attaches live listeners; if a classmate posts, your feed updates without refresh.</li>
+    <li><strong>First login ever</strong> — ensureSeed() copies sample VIPS data (faculty, drafter, GitHub session) into Firestore once.</li>
+    <li><strong>Post on feed</strong> — addPost writes to posts. Everyone signed in sees it.</li>
+    <li><strong>Helpful</strong> — your user id is added/removed on that post’s likes array.</li>
+    <li><strong>Follow</strong> — your id is added to your following array on users.</li>
+    <li><strong>List an item / session</strong> — new document in resources or skills, plus an automatic feed post.</li>
+    <li><strong>Request item / join Meet</strong> — listing status or booking is saved; an inbox row is created; Meet opens in a new tab.</li>
+    <li><strong>Admin Remove</strong> — deleteDoc on that post/item/session. Listeners drop it from every open browser.</li>
+  </ol>
+  <p><strong>Roles:</strong> Student / Teacher are chosen at signup. Admin is forced when email is <code>admin@vips.edu</code>. Moderate page (<code>/admin</code>) redirects home if you are not admin.</p>
+
+  <h2>6. What this is not</h2>
+  <ul>
+    <li>Not OLX (items are free, campus only).</li>
+    <li>Not a paid mentorship app (Meet is free).</li>
+    <li>Not Facebook (no public comment threads).</li>
+    <li>Not a full moderator product: one admin email, client-side role check, any signed-in user can technically write in Firestore. Fine for a 1st-sem prototype; tighten rules before a real campus launch.</li>
+  </ul>
+
+  <h2>7. Handover checklist</h2>
+  <ul>
+    <li>Open https://skillswap-3ca53.web.app</li>
+    <li>Student login <code>ansh@vips.edu</code> / <code>campus123</code> — feed, item request, join Meet</li>
+    <li>Log out</li>
+    <li>Admin login <code>admin@vips.edu</code> / <code>campus123</code> — Moderate → Remove</li>
+    <li>Create a Teacher account and post a Meet session</li>
+    <li>Firebase console (same Google account that owns the project): Authentication (users), Firestore (data), Hosting (site)</li>
+    <li>Keep <code>.env</code> private. It is gitignored. Without it, npm run dev falls back to this-computer-only login.</li>
+  </ul>
+  <p>Firebase console: https://console.firebase.google.com/project/skillswap-3ca53/overview</p>
+  <p>Project owner Google account: the one used to create SkillSwap (<code>anshbutola96@gmail.com</code>).</p>
+  <p class="footer-note">SkillSwap · VIPS Pitampura · User Manual &amp; Handover</p>
+</body>
+</html>
